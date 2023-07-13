@@ -59,6 +59,7 @@ body {
 }
 
 .light {
+  flex-direction: column;
   width: 50px;
   height: 0;
   top: 90px;
@@ -71,6 +72,23 @@ body {
   position: absolute;
   transition: 300ms;
   -webkit-transition-delay: 300ms;
+}
+
+.light .text {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.light .text h1, .light .text small {
+  white-space: nowrap;
+}
+
+#turnon:target .light .text {
+  display: flex;
 }
 
 #turnon:target .light {
