@@ -81,14 +81,19 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.light .text h1, .light .text small {
+.light .text h1,
+.light .text h2 {
   white-space: nowrap;
 }
 
-#turnon:target .light .text {
+.light .text.show {
   display: flex;
+  opacity: 1;
+  animation: pulse 2s infinite;
 }
 
 #turnon:target .light {
@@ -117,5 +122,14 @@ body {
   }
   100% {
     height: 100px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 5px #ff8, 0 0 10px #ff8, 0 0 15px #ff8, 0 0 20px #ff8;
   }
 }
